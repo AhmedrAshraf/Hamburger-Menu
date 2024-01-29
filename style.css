@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.ham {
+  cursor: pointer;
+  transition: transform 400ms;
+  user-select: none;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+}
+
+/* Common styles for ham1, ham2, ham3 */
+.ham1 .top,
+.ham2 .top,
+.ham3 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom,
+.ham2 .bottom,
+.ham3 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+/* Active styles for ham1, ham2, ham3 */
+.ham1.active .top,
+.ham2.active .top,
+.ham3.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom,
+.ham2.active .bottom,
+.ham3.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+/* Styles specific to ham2 */
+.ham2 .top,
+.ham2 .bottom {
+  stroke-dasharray: 40 121;
+}
+
+/* Active styles specific to ham2 */
+.ham2.active .top,
+.ham2.active .bottom {
+  stroke-dashoffset: -102px;
+}
+
+/* Styles specific to ham3 */
+.ham3 .top {
+  stroke-dasharray: 40 130;
+}
+
+.ham3 .middle {
+  stroke-dasharray: 40 140;
+}
+
+.ham3 .bottom {
+  stroke-dasharray: 40 205;
+}
+
+/* Active styles specific to ham3 */
+.ham3.active .top {
+  stroke-dasharray: 75 130;
+  stroke-dashoffset: -63px;
+}
+
+.ham3.active .middle {
+  stroke-dashoffset: -102px;
+}
+
+.ham3.active .bottom {
+  stroke-dasharray: 110 205;
+  stroke-dashoffset: -86px;
+}
